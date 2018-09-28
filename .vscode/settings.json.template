@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "/path/to/your/venv/bin/python3",
+    "python.formatting.provider": "black",
+    "editor.formatOnType": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+}
