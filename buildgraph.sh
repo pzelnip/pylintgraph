@@ -27,4 +27,4 @@ echo "renaming graph"
 mv output/pylint.png pylint$1.png
 
 echo "Opening graph"
-open output/pylint$1.png
+open pylint$1.png
