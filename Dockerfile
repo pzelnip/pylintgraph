@@ -9,15 +9,16 @@ RUN apk add --no-cache \
 RUN python3 -m ensurepip
 RUN pip3 install --upgrade pip
 
+COPY requirements.txt .
+
 RUN apk add --no-cache --virtual .build-deps \
-        gcc \
-        build-base \
-        python3-dev \
-        libpng-dev \
-        musl-dev \
-        freetype-dev \
-    && pip3 install numpy \
-    && pip3 install matplotlib \
+    gcc \
+    build-base \
+    python3-dev \
+    libpng-dev \
+    musl-dev \
+    freetype-dev \
+    && pip3 install -r requirements.txt \
     && apk del .build-deps
 
 COPY generate_graph.py /
