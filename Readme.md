@@ -1,5 +1,7 @@
 # Pylint Warnings Graph
 
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+
 Small example to take a Pylint report and generage a pie chart
 summarising which Pylint warning(s) are most common in your
 project.
