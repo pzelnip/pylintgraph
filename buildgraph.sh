@@ -17,11 +17,15 @@ rm output/*
 echo "Copying pylint-report.txt to output..."
 cp pylint-report.txt output/
 
-echo "Building docker image"
-docker build -t matplotlib:latest .
+echo "Pulling docker image"
+docker pull pzelnip/pylintgraph:latest
+# to build/push the image:
+# docker build -t pzelnip/pylintgraph:latest .
+# docker login -u pzelnip
+# docker push pzelnip/pylintgraph:latest
 
 echo "Generating graph"
-docker run --rm -v $PWD/output:/tmp matplotlib:latest python3 generate_graph.py
+docker run --rm -v $PWD/output:/tmp pzelnip/pylintgraph:latest python3 generate_graph.py
 
 echo "renaming graph"
 mv output/pylint.png pylint$1.png
